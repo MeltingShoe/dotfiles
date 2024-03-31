@@ -120,5 +120,3 @@ eval "$(zoxide init bash)"
 
 test -e "$HOME/.shellfishrc" && source "$HOME/.shellfishrc"
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"

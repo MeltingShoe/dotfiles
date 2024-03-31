@@ -1,3 +1,5 @@
 alias python="python3"
 alias cls="clear"
 alias see="!! | less"
+alias start_tabs="tmux has-session -t buffer || tmux new-session -d -s buffer"
+alias tab="bash ~/tmux-tabs/tab.sh"
