@@ -57,8 +57,20 @@ vim.opt.showmode = true
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+vim.opt.clipboard = {'unnamed','unnamedplus'}
 
+-- let g:clipboard = {
+ --             'name': 'myClipboard',
+    --          'copy': {
+       --          '+': ['xsel', '-i -b', '-'],
+          --       '*': ['xsel', '-i -b', '-'],
+             --  },
+ --             'paste': {
+    --             '+': ['xsel', '-o -b', '-'],
+       --          '*': ['xsel', '-o -p', '-'],
+          --    },
+             -- 'cache_enabled': 1,
+ --           }
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -81,7 +93,7 @@ vim.opt.timeoutlen = 300
 vim.opt.cursorline = false
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 12
 
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
@@ -109,8 +121,8 @@ vim.keymap.set('n','K','{',opts)
 vim.keymap.set('n','L','$',opts)
 
 -- Insert newline without leaving normal mode
-vim.keymap.set('n','<Leader>o','o<Esc>')
-vim.keymap.set('n','<Leader>O','O<Esc>')
+vim.keymap.set('n','<Leader>o','o<Esc>',opts)
+vim.keymap.set('n','<Leader>O','O<Esc>',opts)
 
 -- Insert mode navigation
 vim.keymap.set('i','<Up>', '<Nop>')

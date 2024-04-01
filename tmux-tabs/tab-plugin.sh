@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+tmux has-session -t "buffer:" || tmux new -d -s "buffer:"
 active=$(tmux display -p "#S:#W.#P")
 buffer_name=$(tmux display -p "buffer_#S_#W_#P")
 buffer_windows=$(tmux list-windows -t buffer -F "#W")
@@ -6,7 +7,7 @@ pane_target=$(tmux display -p "buffer:$buffer_name.1")
 buffer_path=$(tmux display -p "buffer:$buffer_name")
 
 if ! [[ "$buffer_windows" == *"$buffer_name"* ]]; then
-	tmux neww -t "buffer:" -n $buffer_name
+	tmux neww -t "buffer:" -n $buffer_name 
 fi
 tmux swap-pane -Z -s $active -t $pane_target
 

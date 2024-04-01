@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+tmux has-session -t "buffer:" || tmux new -d -s "buffer:"
 active=$(tmux display -p "#S:#W.#P")
 buffer_name=$(tmux display -p "buffer_#S_#W_#P")
 buffer_windows=$(tmux list-windows -t buffer -F "#W")
