@@ -2,10 +2,10 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+#case $- in
+ #   *i*) ;;
+  #    *) return;;
+#esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -104,6 +104,7 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+export DISPLAY=:1 || Xvfb :1; export DISPLAY=:1
 
 # If not running interactively, don't do anything
 # enable programmable completion features (you don't need to enable

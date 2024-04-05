@@ -1,8 +1,6 @@
 -- TODO, add everything in this WISHLIST:
 -- Navigate past EOF
 -- zz. Try making cursor stay in middle
--- highlight yanked text
--- clear search highligght
 -- expandtab, autoindent, tabstop, smartindent, 4 spaces per tab
 -- https://vi.stackexchange.com/questions/3388/call-a-vim-function-silently
 -- https://www.vim.org/scripts/script.php?script_id=1649
@@ -58,19 +56,6 @@ vim.opt.showmode = true
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.opt.clipboard = {'unnamed','unnamedplus'}
-
--- let g:clipboard = {
- --             'name': 'myClipboard',
-    --          'copy': {
-       --          '+': ['xsel', '-i -b', '-'],
-          --       '*': ['xsel', '-i -b', '-'],
-             --  },
- --             'paste': {
-    --             '+': ['xsel', '-o -b', '-'],
-       --          '*': ['xsel', '-o -p', '-'],
-          --    },
-             -- 'cache_enabled': 1,
- --           }
 
 -- Enable break indent
 vim.opt.breakindent = true
